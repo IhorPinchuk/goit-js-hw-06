@@ -14,14 +14,21 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery');
-console.log(galleryEl);
 
 const markupImage = images
   .map(
     image => `<li class = "gallery__item">
-<img class = "gallery__img" src = "${image.url}" alt ="${image.alt}"/>
+<img class = "gallery__img" src = "${image.url}" alt ="${image.alt}" width = 500/>
 </li>`,
   )
   .join('');
 
-galleryEl.insertAdjacentHTML("afterbegin", markupImage);
+galleryEl.insertAdjacentHTML('afterbegin', markupImage);
+
+
+galleryEl.style.display = 'flex';
+galleryEl.style.justifyContent = 'center';
+galleryEl.style.alignItems = 'center';
+galleryEl.style.flexWrap = 'wrap'
+galleryEl.style.listStyle = 'none';
+galleryEl.style.gap = '30px';
